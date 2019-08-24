@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GpsLog</string>
+
+    <!-- Latitude, longitude format -->
+    <string name="latitude_longitude">%1$.8f, %2$.8f</string>
+    <string name="webservice_log">Webservice Log</string>
+    <string name="gps_log">Gps Log</string>
+</resources>

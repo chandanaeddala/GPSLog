@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuWebServiceLog"
+            android:title="@string/webservice_log"
+            android:icon="@drawable/web_service_log"/>
+    <item android:id="@+id/menuGpsLog"
+            android:title="@string/gps_log"
+            android:icon="@drawable/gps_log"/>
+</menu>

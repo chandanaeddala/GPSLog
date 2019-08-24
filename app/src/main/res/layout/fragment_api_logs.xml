@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="apiLogVM"
+                type="com.altimetrick.gpslog.ui.apiinfo.ApiInfoViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblNoLogs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="No API logs found so for."
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:visibility="@{apiLogVM.isAPILogAvailable() ? View.GONE :  View.VISIBLE}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerAPILogs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                bind:apiLogs="@{apiLogVM.apiLogsObservableList}"
+                android:visibility="@{apiLogVM.isAPILogAvailable() ? View.VISIBLE :  View.GONE}"/>
+
+    </LinearLayout>
+
+</layout>
