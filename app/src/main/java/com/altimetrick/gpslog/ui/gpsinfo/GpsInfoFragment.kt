@@ -45,8 +45,10 @@ class GpsInfoFragment : BaseFragment<FragmentGpsInfoBinding, GpsInfoViewModel>()
                         val markerLocation = LatLng(location.latitude!!.toDouble(), location.longtitude!!.toDouble())
                         mMap?.addMarker(MarkerOptions().position(markerLocation).title(location.id.toString()))
 
-                        val yourLocation = CameraUpdateFactory.newLatLngZoom(markerLocation, 19f)
-                        mMap?.animateCamera(yourLocation)
+                        if (locationsList.indexOf(location) == 0) {
+                            val yourLocation = CameraUpdateFactory.newLatLngZoom(markerLocation, 25f)
+                            mMap?.animateCamera(yourLocation)
+                        }
 
                     }
                 }
